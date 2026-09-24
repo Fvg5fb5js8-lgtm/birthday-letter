@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>To 林欣莹</title>
+<style>
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#faf7f2;color:#333;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans SC","PingFang SC",sans-serif}
+.card{width:min(88vw,520px);min-height:70vh;box-sizing:border-box;padding:48px 28px;display:flex;align-items:center;justify-content:center;text-align:center}
+h1{font-size:28px;font-weight:500;margin:0 0 18px}.sub{font-size:12px;color:#999;margin-top:34px}
+.page2{text-align:left;line-height:2;font-size:15px}.page2 h2{text-align:center;font-weight:500;margin-bottom:28px}.page2 p{margin:0 0 18px}
+button,input{font:inherit}.pw{display:flex;flex-direction:column;gap:12px;align-items:center}.pw input{width:180px;padding:10px 12px;border:1px solid #ddd;border-radius:8px;text-align:center}.pw button,.next{border:0;background:#333;color:white;border-radius:8px;padding:9px 20px}.err{font-size:12px;color:#a44;min-height:18px}
+</style>
+</head>
+<body>
+<div class="card" id="app"></div>
+<script>
+const PASSWORD="070923";
+const app=document.getElementById("app");
+function lock(){
+app.innerHTML=`<div class="pw"><h1>To 林欣莹</h1><div>输入密码后查看</div><input id="p" type="password" inputmode="numeric" placeholder="Password"><button onclick="unlock()">打开</button><div class="err" id="e"></div></div>`;
+document.getElementById("p").addEventListener("keydown",e=>{if(e.key==="Enter")unlock()});
+}
+function unlock(){if(document.getElementById("p").value===PASSWORD){page1()}else document.getElementById("e").textContent="密码不正确";}
+function page1(){app.innerHTML=`<div><h1>To 林欣莹</h1><div>Happy Birthday</div><button class="next" style="margin-top:42px" onclick="page2()">点击下一页</button></div>`}
+function page2(){app.innerHTML=`<div class="page2"><h2>生日快乐！</h2>
+<p>我们认识快两年了，这还是我第一次给你写信。</p>
+<p>写这封信是想祝你生日快乐，也想谢谢你。谢谢你这一年半来的陪伴和关心，在我难过的时候安慰我，在我困难的时候帮助我，陪我一起开心、难过。</p>
+<p>你是一个非常善良、开朗、会表达自己想法的人。之前的我非常内向，也羞于表达自己的想法，包括感谢的话，所以我常常选择保留大部分自己的想法。而你让我看到了不一样的选择。</p>
+<p>你开心、难过、气愤、感动，都会热烈地表达出来，这也是我最喜欢你的地方。</p>
+<p>希望你永远开心、热烈、单纯地去享受生活。</p>
+<p>最后，再祝你生日快乐。19岁快乐～</p>
+<p style="text-align:right;margin-top:34px">by 姚沐梓</p></div>`}
+lock();
+</script>
+</body></html>
